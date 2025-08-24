@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sayable - Authentic Instagram Comments</title>
+    <meta name="description" content="Whether you want authentic Instagram comments or payment for sharing your voice, Sayable makes it simple. Buy real comments or start earning today - no hassle, no bots.">
+    
+    <!-- Viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+    <!-- Branding -->
+    <meta name="application-name" content="Sayable">
+    <meta property="og:site_name" content="Sayable">
+
+    <!-- Open Graph (for social sharing previews) -->
+    <meta property="og:title" content="Sayable - Authentic Instagram Comments">
+    <meta property="og:description" content="Whether you want authentic Instagram comments or payment for sharing your voice, Sayable makes it simple. Buy real comments or start earning today - no hassle, no bots.">
+    <meta property="og:image" content="https://getsayable.com/static/Images/social-preview.jpg"> <!-- Replace with your actual preview image -->
+    <meta property="og:url" content="https://getsayable.com">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Sayable",
+        "url": "https://getsayable.com",
+        "logo": "https://getsayable.com/static/Images/BlackLogo.png",
+        "sameAs": [
+            "https://www.instagram.com/sayable",
+            "https://twitter.com/sayable"
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Images/favicon.png') }}" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='cookie.js') }}"></script>
+    <script src="{{ url_for('static', filename='mobile-redirect.js') }}"></script>
+    <script src="{{ url_for('static', filename='dropdown.js') }}"></script>
+    <!--<script src="{{ url_for('static', filename='modern-under-body.js') }}"></script>-->
+</head>
+<body>
+    <div id="topbar">
+        <div id="dropdown-menu">
+            <a href="/purchase" class="dropdown-item">Purchase</a>
+            <a href="/earn" class="dropdown-item">Earn</a>
+            <a href="/create_account" class="dropdown-item">Create Account</a>
+            <a href="/faq" class="dropdown-item">FAQ</a>
+            {% if session.contributor %}
+                <a href="/dashboard" class="dropdown-item">Dashboard</a>
+            {% endif %}
+        </div>
+        <div id="dropdown-overlay"></div>
+        <a href="/">
+            <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" id="logo">
+        </a>
+        <div id="divider">|</div>
+        <img src="{{ url_for('static', filename='Images/list.png') }}" id="optionsicon" draggable="false">
+        <a href="/purchase" class="topbar_content">Purchase</a>
+        <a href="/earn" class="topbar_content">Earn</a>
+        <a href="/create_account" class="topbar_content">Create Account</a>
+        <a href="/faq" class="topbar_content">FAQ</a>
+        {% if session.contributor %}
+            <a href="/dashboard" class="topbar_content">Dashboard</a>
+        {% endif %}
+    </div>
+    <div id="topbar_l">
+        {% if session.email %}
+            <a href="/account" id="name_disp">{{ name }}</a>
+            <img src="{{ url_for('static', filename='Images/circle-user.png') }}" id="usericon">
+        {% else %}
+            <a href="/login" id="name_disp">Log In</a>
+            <img src="{{ url_for('static', filename='Images/circle-user.png') }}" id="usericon">
+        {% endif %}
+    </div>
+    <div id="center_wrapper">
+        <div id="under_body">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-badge">
+                <span class="badge-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="currentColor"><path d="M216-176q-45-45-70.5-104T120-402q0-63 24-124.5T222-642q35-35 86.5-60t122-39.5Q501-756 591.5-759t202.5 7q8 106 5 195t-16.5 160.5q-13.5 71.5-38 125T684-182q-53 53-112.5 77.5T450-80q-65 0-127-25.5T216-176Zm112-16q29 17 59.5 24.5T450-160q46 0 91-18.5t86-59.5q18-18 36.5-50.5t32-85Q709-426 716-500.5t2-177.5q-49-2-110.5-1.5T485-670q-61 9-116 29t-90 55q-45 45-62 89t-17 85q0 59 22.5 103.5T262-246q42-80 111-153.5T534-520q-72 63-125.5 142.5T328-192Zm0 0Zm0 0Z"/></svg>
+                    Community Sourced
+                </span>
+                <span class="badge-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                    Privacy Secured
+                </span>
+                <span class="badge-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    100% Authentic
+                </span>
+            </div>
+            
+            <h1 class="hero-title">
+                The <span class="gradient-text">Ultimate</span> Instagram Comment Service<br>(IN BETA TESTING)
+            </h1>
+            
+            <p class="hero-description">
+                Real comments from active US/CA Instagram users to help your posts stand out and feel complete - no hassle, not bots
+            </p>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.location.href='/purchase'">
+                    Start Growing
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                    </svg>
+                </button>
+                <button class="btn-secondary" onclick="window.location.href='/earn'">
+                    Earn Money
+                </button>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="section-header">
+                <h2>How It <span class="gradient-text">Works</span></h2>
+                <p>Simple, transparent, and effective in just three steps</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card" data-step="1">
+                    <div class="step-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 4V2c0-.55-.45-1-1-1s-1 .45-1 1v2C3.13 4.12 2 5.5 2 7v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.5-1.13-2.88-3-2.95V2c0-.55-.45-1-1-1s-1 .45-1 1v2H7z"/>
+                        </svg>
+                    </div>
+                    <h3>Choose Your Package</h3>
+                    <p>Select from our range of comment packages. Every comment comes from everyday, active Instagram users.</p>
+                </div>
+                
+                <div class="step-card" data-step="2">
+                    <div class="step-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Our Contributors Engage</h3>
+                    <p>Real users from the Sayable community read your post and write thoughtful, relevant comments.</p>
+                </div>
+                
+                <div class="step-card" data-step="3">
+                    <div class="step-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                        </svg>
+                    </div>
+                    <h3>Get Your Comments</h3>
+                    <p>Watch authentic comments get delivered directly to your post, all within 24 hours of purchase!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="section-header">
+                <h2>Why Choose <span class="gradient-text">Sayable</span>?</h2>
+                <p>The most trusted platform for authentic Instagram comments</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                    </div>
+                    <h3>No Fake Accounts</h3>
+                    <p>Every commenter is manually verified. We ensure all accounts are active, legitimate Instagram users - never bots or fake profiles.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.005 2.005 0 0 0 17.87 7H16c-.8 0-1.54.37-2.01.99L12 10.5 8 5H4c-1.1 0-2 .9-2 2s.9 2 2 2h1.5L8 13v9h2v-7.5l2.5-3L14 17v5h2z"/>
+                        </svg>
+                    </div>
+                    <h3>Real People</h3>
+                    <p>Our contributors are everyday Instagram users who earn money by leaving thoughtful, genuine comments on posts like yours.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                        </svg>
+                    </div>
+                    <h3>Thoughtful Comments</h3>
+                    <p>We instruct our commenters to read each post carefully and write relevant, engaging responses that add value to your content.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>We never ask for your password or store sensitive information. All payments are processed securely through Stripe.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our support team is always here to help. Reach out anytime with questions and we'll respond quickly to assist you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9s.67 1.5 1.5 1.5zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>We deliver within 24 hours. This delay shows our authenticity - real people need time to craft genuine responses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Instagram?</h2>
+                <p>Join our community of creators who trust Sayable for authentic comments</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="window.location.href='/purchase'">
+                        Get Comments Now
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-outline" onclick="window.location.href='/earn'">
+                        Start Earning
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        <div id="site_info">
+            <div class="logocol">
+                <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" id="logobot">
+                <div id="sepline"></div>
+                <div class="fineprint">support@getsayable.com</div>
+                <a href="https://discord.gg/XwyJZAVRHv" id="discbut">
+                    <img id="discord" src="{{ url_for('static', filename='Images/Discord2.png') }}" alt="payment">
+                    <div>Discord</div>
+                </a>
+            </div>
+            <div class="sitecol">
+                <div class="sitehead">Navigate</div>
+                <a href="/purchase" class="sitecontent">Purchase</a>
+                <a href="/earn" class="sitecontent">Earn</a>
+                {% if session.email %}
+                    <a href="/logout" class="sitecontent">Log Out</a>
+                {% else %}
+                    <a href="/login" class="sitecontent">Log In</a>
+                {% endif %}
+                <a href="/create_account" class="sitecontent">Create Account</a>
+                <a href="/faq" class="sitecontent">FAQ</a>
+                <a href="/account" class="sitecontent">Account</a>
+            </div>
+            <div class="sitecol">
+                <div class="sitehead">Support</div>
+                <a href="/terms_of_service" class="sitecontent">Terms Of Service</a>
+                <a href="/terms_of_service#pp" class="sitecontent">Privacy Policy</a>
+                <a href="/terms_of_service#rp" class="sitecontent">Refund Policy</a>
+                <a href="/faq" class="sitecontent">About Us</a>
+                <a href="mailto:support@getsayable.com" class="sitecontent">Contact Us</a>
+            </div>
+            <div class="sitecol">
+                <div class="sitehead">Credit</div>
+                <a href="https://cssgradient.io/" class="sitecontent">CSS Gradients</a>
+                <a href="https://www.flaticon.com/" class="sitecontent">Flaticon</a>
+                <a href="https://cssbuttons.io/" class="sitecontent">CSS Buttons</a>
+                <a href="https://www.instagram.com/" class="sitecontent">Instagram</a>
+                <a href="https://chatgpt.com/" class="sitecontent">Vibe Code</a>
+                <a href="https://www.dreamstale.com/" class="sitecontent">Dreamstale</a>
+            </div>
+            <div class="imgcol">
+                <img class="siteimg" src="{{ url_for('static', filename='Images/Light Color/1.png') }}" alt="payment">
+                <img class="siteimg" src="{{ url_for('static', filename='Images/Light Color/2.png') }}" alt="payment">
+                <img class="siteimg" src="{{ url_for('static', filename='Images/Light Color/5.png') }}" alt="payment">
+                <img class="siteimg" src="{{ url_for('static', filename='Images/Light Color/7.png') }}" alt="payment">
+                <img class="siteimg" src="{{ url_for('static', filename='Images/Light Color/14.png') }}" alt="payment">
+                <img class="siteimg" src="{{ url_for('static', filename='Images/Light Color/22.png') }}" alt="payment">
+                <div class="paycont">
+                    <img class="payimg" src="{{ url_for('static', filename='Images/Light Color/apple-pay.png') }}" alt="payment">
+                </div>
+                <div class="paycont">
+                    <img class="payimg" src="{{ url_for('static', filename='Images/Light Color/google-pay.png') }}" alt="payment">
+                </div>
+            </div>
+        </div>
+        <div id="copyright">Copyright © 2025 Sayable. All rights reserved.</div>
+        <!-- Cookie Consent Popup -->
+        <div id="cookie-consent">
+            <h3>
+                <svg class="cookie-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                We Use Cookies
+            </h3>
+            <p>
+                We use cookies to enhance your browsing experience and provide personalized content. 
+                By continuing to use our website, you agree to our 
+                <a href="/terms_of_service" target="_blank">Terms of Service</a> and consent to our use of cookies.
+            </p>
+            <div class="cookie-buttons">
+                <button id="cookie2" class="cookie-btn cookie-btn-accept">
+                    Accept & Continue
+                </button>
+            </div>
+        </div>
+</body>
+</html
